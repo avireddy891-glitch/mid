@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 300px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: white;
+        }
+
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #msg {
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<form onsubmit="return register()">
+
+    <h2>Registration Form</h2>
+
+    Name:
+    <input type="text" id="name" required><br>
+
+    Roll No:
+    <input type="text" id="roll" required><br>
+
+    Phone:
+    <input type="text" id="phone" required><br>
+
+    Email:
+    <input type="email" id="email" required><br>
+
+    Password:
+    <input type="password" id="password" required><br>
+
+    Gender:
+    <input type="radio" name="gender" required> Male
+    <input type="radio" name="gender"> Female
+    <br>
+
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+
+    <p id="msg"></p>
+
+</form>
+
+<script>
+function register()
+{
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
+
+    if (phone.length >= 10 && password.length >= 6)
+    {
+        document.getElementById("msg").innerHTML =
+        "Registered Successfully!";
+    }
+    else
+    {
+        alert("Please enter valid details");
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>
